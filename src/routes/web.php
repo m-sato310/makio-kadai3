@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\WeightLogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/register/step1', function () {
+    return view('auth.register-step1');
 });
+Route::post('/register', [AuthController::class, 'store']);
+Route::get('/register/step2', [WeightLogController::class, 'registerStep2Form']);
+Route::post('/register/step2', [WeightLogController::class, 'registerStep2Store']);
