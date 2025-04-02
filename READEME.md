@@ -44,7 +44,7 @@ php artisan db:seed
 ```
 
 ## 初期テストユーザー
-- test@example.com/1111
+- test@example.com/pass:1111
 
 ## 使用技術(実行環境)
 - PHP8.3.0

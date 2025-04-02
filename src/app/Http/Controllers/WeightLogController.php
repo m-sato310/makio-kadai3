@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateWeightLogRequest;
 use App\Http\Requests\RegisterStep2Request;
+use App\Http\Requests\UpdateTargetRequest;
 use App\Http\Requests\UpdateWeightLogRequest;
 use App\Models\WeightLog;
 use App\Models\WeightTarget;
@@ -118,6 +119,23 @@ class WeightLogController extends Controller
     {
         $log = WeightLog::where('user_id', auth()->id())->find($id);
         $log->delete();
+
+        return redirect('/weight_logs');
+    }
+
+    public function goalSettingForm()
+    {
+        $target = WeightTarget::where('user_id', auth()->id())->first();
+        return view('weight_logs.goal_setting', compact('target'));
+    }
+
+    public function goalSettingUpdate(UpdateTargetRequest $request)
+    {
+        $target = WeightTarget::where('user_id', auth()->id())->first();
+
+        $target->update([
+            'target_weight' => $request->target_weight,
+        ]);
 
         return redirect('/weight_logs');
     }

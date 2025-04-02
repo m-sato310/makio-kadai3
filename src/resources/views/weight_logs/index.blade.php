@@ -42,6 +42,8 @@
         <button type="submit">ログアウト</button>
     </form>
 
+    <a href="/weight_logs/goal_setting">目標体重設定</a>
+
     @if(isset($searchMessage))
         <p>{{ $searchMessage }}</p>
     @endif

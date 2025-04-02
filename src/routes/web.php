@@ -29,6 +29,8 @@ Route::post('/logout', function () {
 });
 Route::post('/weight_logs/create', [WeightLogController::class, 'store']);
 Route::get('/weight_logs/search', [WeightLogController::class, 'search']);
+Route::get('/weight_logs/goal_setting', [WeightLogController::class, 'goalSettingForm']);
+Route::post('/weight_logs/goal_setting', [WeightLogController::class, 'goalSettingUpdate']);
 Route::get('/weight_logs/{id}', [WeightLogController::class, 'edit']);
 Route::post('/weight_logs/{id}/update', [WeightLogController::class, 'update']);
 Route::post('/weight_logs/{id}/delete', [WeightLogController::class, 'destroy']);
