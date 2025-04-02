@@ -10,12 +10,19 @@
 <body>
     <h1>情報更新</h1>
 
+    <a href="/weight_logs/goal_setting">目標体重設定</a>
+
+    <form action="/logout" method="post">
+        @csrf
+        <button type="submit">ログアウト</button>
+    </form>
+
     <form action="/weight_logs/{{ $log->id }}/update" method="post">
         @csrf
 
         <div>
             <label>日付</label>
-            <input type="date" name="date" value="{{ old('date',$log->date) }}">
+            <input type="date" name="date" value="{{ old('date',\Carbon\Carbon::today()->toDateString()) }}">
             @error('date')
             <p style="color: red;">{{ $message }}</p>
             @enderror

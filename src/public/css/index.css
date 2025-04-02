@@ -1,3 +1,13 @@
+/* hover効果 */
+.weight-log-item {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.weight-log-item:hover {
+  background-color: skyblue;
+  cursor:pointer;
+}
+
 /* モーダル */
 .modal {
   position: fixed;
