@@ -1,8 +1,8 @@
-# FashionablyLate(お問い合わせフォーム)
+# Pigly(体重管理アプリ)
 
 ## 環境構築
 **Dockerビルド**
-1. `git clone git@github.com:estra-inc/confirmation-test-contact-form.git`
+1. `git clone https://github.com/m-sato310/makio-kadai3.git`
 2. DockerDesktopアプリを立ち上げる
 3. `docker-compose up -d --build`
 
@@ -52,7 +52,7 @@ php artisan db:seed
 - MySQL8.0.29
 
 ## ER図
-![alt](erd.png)
+![ER図](ER.drawio.png)
 
 ## URL
 - 開発環境：http://localhost/
