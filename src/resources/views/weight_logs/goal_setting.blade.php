@@ -1,28 +1,31 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.loggedin')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>目標体重設定</title>
-</head>
+@section('title', '目標体重設定')
 
-<body>
-    <h1>目標体重設定</h1>
+@section('content')
+<div class="management-container">
+    <div class="card">
+        <h1 class="page-title">目標体重設定</h1>
 
-    <form action="/weight_logs/goal_setting" method="post">
-        @csrf
+        <form action="/weight_logs/goal_setting" method="post">
+            @csrf
 
-        <label>目標体重 (kg)</label>
-        <input type="text" name="target_weight" value="{{ old('target_weight', $target->target_weight) }}">
-        @error('target_weight')
-            <p style="color: red;">{{ $message }}</p>
-        @enderror
+            <div class="modal-form__group">
+                <div class="input-with-unit">
+                    <input type="text" name="target_weight" value="{{ old('target_weight', $target->target_weight) }}">
+                    <span class="unit-label">kg</span>
+                </div>
+                @error('target_weight')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
+            </div>
 
-        <button type="submit">更新</button>
-    </form>
+            <div class="modal-form__button-group">
+                <a class="modal-btn-cancel" href="/weight_logs">戻る</a>
+                <button class="modal-form__submit-btn" type="submit">更新</button>
+            </div>
+        </form>
 
-    <a href="/weight_logs">戻る</a>
-</body>
-
-</html>
+    </div>
+</div>
+@endsection

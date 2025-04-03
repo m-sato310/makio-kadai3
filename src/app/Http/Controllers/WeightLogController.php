@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateTargetRequest;
 use App\Http\Requests\UpdateWeightLogRequest;
 use App\Models\WeightLog;
 use App\Models\WeightTarget;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -85,8 +86,8 @@ class WeightLogController extends Controller
 
         $target = WeightTarget::where('user_id', $user->id)->first();
 
-        $fromText = $request->from ?: '指定なし';
-        $toText = $request->to ?: '指定なし';
+        $fromText = $request->from ? Carbon::parse($request->from)->format('Y年m月d日') : '指定なし';
+        $toText = $request->to ? Carbon::parse($request->to)->format('Y年m月d日') : '指定なし';
         $searchMessage = "{$fromText}~{$toText}の検索結果 {$logs->total()}件";
 
         return view('weight_logs.index', compact('logs','latestWeightLog', 'target', 'searchMessage'));

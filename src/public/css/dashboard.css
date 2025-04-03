@@ -1,0 +1,437 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* ヘッダー全体 */
+.main-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+/* ヘッダー内の横並びレイアウト */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+/* ロゴ画像 */
+.header-logo {
+    height: 32px;
+}
+
+/* ヘッダー右側（ボタンたち） */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ボタン用アイコン画像 */
+.header-icon {
+    height: 32px;
+    cursor: pointer;
+}
+
+
+.management-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ログアウトボタンのスタイル（画像のみ） */
+.logout-button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* ボタン */
+.btn-submit {
+    display: block;
+    width: 150px;
+    margin: 0;
+    padding: 12px;
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    text-decoration: none; /* リンク用にも */
+}
+
+.btn-submit:hover {
+    opacity: 0.85;
+}
+
+/* 体重サマリー */
+.summary-wrapper {
+    padding: 24px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    min-width: 960px;
+    margin: 40px auto 24px;
+}
+
+.weight-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 32px auto;
+    text-align: center;
+    max-width: 960px;
+}
+
+.summary-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summary-item .label {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.summary-item .value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 検索フォーム */
+.search-add-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    max-width: 960px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+}
+
+.search-form input[type="date"] {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.date-separator {
+    font-size: 18px;
+    margin: 0 4px;
+}
+
+.btn-search,
+.btn-reset {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-search {
+    background-color: #2c2b2b88;
+    color: #fff;
+}
+
+.btn-reset {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1.4;
+    display: inline-block;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-reset:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+
+
+/* テーブル周り */
+.table-wrapper {
+    padding: 32px; /* 内側の余白を広めに */
+    margin: 48px auto; /* 上下の外側余白も広めに */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 16px; /* 少し柔らかく丸く */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* 影も少し強めに */
+    width: 100%;
+    max-width: 960px; /* 横幅が画面全体に広がりすぎないように制限 */
+}
+
+.weight-log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    font-size: 14px;
+}
+
+.weight-log-table th,
+.weight-log-table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.weight-log-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.weight-log-table td img {
+    vertical-align: middle;
+}
+
+/* hover効果 */
+.weight-log-item {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.weight-log-item:hover {
+    background-color: skyblue;
+    cursor:pointer;
+}
+
+/* ページネーション */
+.pagination {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.pagination nav {
+    display: inline-block;
+}
+
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}
+
+/* モーダル */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    max-width: 90%;
+    border-radius: 12px;
+    border: 1px solid #8B7969;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.modal__content {
+    position: relative;
+    padding: 48px 64px;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+.modal-form__group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+}
+
+.modal-form__label {
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.required {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.modal-form__group input,
+.modal-form__group textarea {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.modal-form__group textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+.input-with-unit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-with-unit input {
+    flex: 1;
+}
+
+.unit-label {
+    font-size: 16px;
+    color: black;
+}
+
+.modal-form__button-group {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.modal-form__submit-btn {
+    width: 180px;
+    padding: 12px;
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    text-align: center;
+}
+
+.modal-form__submit-btn:hover {
+    opacity: 0.85;
+}
+
+.modal-btn-cancel {
+    width: 180px;
+    padding: 12px;
+    background-color: #ddd;
+    color: #222;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-btn-cancel:hover {
+    background-color: #ccc;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 48px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    min-width: 640px;
+    margin: 40px auto;
+}
+
+.button-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.center-buttons {
+    display: flex;
+    gap: 24px;
+}
+
+.delete-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 600px;
+    margin: 24px auto 0;
+}
+
+.delete-form {
+    margin: 0;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #333;
+}
