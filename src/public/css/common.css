@@ -1,0 +1,129 @@
+body {
+    /* min-height: 100v; */
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* 会員登録、体重登録、ログイン用背景 */
+.auth-bg {
+    background-image: url('/images/bg-gradient.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* フォームの外枠 */
+.form-container {
+    max-width: 480px;
+    margin: 60px auto;
+    padding: 32px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.logo-image {
+    display: block;
+    margin: 0 auto 16px;
+    max-width: 160px;
+    height: auto;
+}
+/* タイトル */
+.form-title {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+.form-step {
+    max-width: 300px;
+    margin: 4px auto 24px;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    margin-top: 4px;
+    margin-bottom: 24px;
+}
+
+/* 各フィールド */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.input-with-unit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-with-unit input {
+    flex: 1;
+}
+
+.unit-label {
+    font-size: 16px;
+    color: #555;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    padding: 8px 12px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+/* ボタン */
+.btn-submit {
+    width: 250px;
+    display: block;
+    margin: 50px auto 0;
+    padding: 12px;
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-submit:hover {
+    opacity: 0.85;
+}
+
+.link-to-login {
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+    color: #0077cc;
+    text-decoration: underline;
+}
+
+.link-to-login:hover {
+    color: #005999;
+}
+
+/* エラーメッセージ */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}

@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="{{ asset('css/common.css')}}">
 </head>
 
-<body>
+<body class="@yield('body_class')">
 
     <main class="container">
         @yield('content')
     </main>
-    
+
 </body>
 
 </html>

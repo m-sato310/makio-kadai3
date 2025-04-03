@@ -1,46 +1,46 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新規会員登録 - Step1</title>
-</head>
+@section('title', '新規会員登録')
 
-<body>
-    <h1>新規会員登録</h1>
+@section('body_class', 'auth-bg')
+
+@section('content')
+<div class="form-container">
+    <img src="{{ asset('images/pigly.png') }}" alt="Piglyロゴ" class="logo-image">
+
+    <h1 class="form-title">新規会員登録</h1>
+    <p class="form-step">STEP1 アカウント情報の登録</p>
 
     <form action="/register" method="post">
         @csrf
 
-        <div>
-            <label>お名前</label>
-            <input type="text" name="name" value="{{ old('name') }}">
+        <div class="form-group">
+            <label for="name">お名前</label>
+            <input type="text" name="name" id="name" value="{{ old('name') }}" placeholder="名前を入力">
             @error('name')
-            <p style="color: red;">{{ $message }}</p>
+            <p class="error-message">{{ $message }}</p>
             @enderror
         </div>
 
-        <div>
-            <label>メールアドレス</label>
-            <input type="email" name="email" value="{{ old('email') }}">
+        <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="メールアドレスを入力">
             @error('email')
-            <p style="color: red;">{{ $message }}</p>
+            <p class="error-message">{{ $message }}</p>
             @enderror
         </div>
 
-        <div>
-            <label>パスワード</label>
-            <input type="password" name="password">
+        <div class="form-group">
+            <label for="password">パスワード</label>
+            <input type="password" name="password" id="password" placeholder="パスワードを入力">
             @error('password')
-            <p style="color: red;">{{ $message }}</p>
+            <p class="error-message">{{ $message }}</p>
             @enderror
         </div>
 
-        <button type="submit">次に進む</button>
+        <button class="btn btn-submit" type="submit">次に進む</button>
     </form>
-
-    <a href="/login">ログインはこちら</a>
-</body>
-
-</html>
+    
+    <a class="link-to-login" href="/login">ログインはこちら</a>
+</div>
+@endsection
