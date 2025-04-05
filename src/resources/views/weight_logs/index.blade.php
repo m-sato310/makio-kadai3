@@ -79,7 +79,7 @@
         </table>
 
         <div class="pagination">
-            {{ $logs->links() }}
+            {{ $logs->links('vendor.pagination.custom') }}
         </div>
     </div>
 

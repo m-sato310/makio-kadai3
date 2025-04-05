@@ -233,12 +233,6 @@ body {
     display: inline-block;
 }
 
-svg.w-5.h-5 {
-    /*paginateメソッドの矢印の大きさ調整のために追加*/
-    width: 30px;
-    height: 30px;
-}
-
 /* モーダル */
 .modal {
     position: fixed;
@@ -434,4 +428,46 @@ svg.w-5.h-5 {
     font-weight: bold;
     margin-bottom: 50px;
     color: #333;
+}
+
+/* ページネーション */
+.pagination-wrapper {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.pagination-list {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+    gap: 8px;
+}
+
+.pagination-list li {
+    display: inline-block;
+}
+
+.pagination-list li a,
+.pagination-list span {
+    padding: 8px 14px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: none;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+.pagination-list li.active-page span {
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    color: white;
+    border: none;
+}
+
+.pagination-list li.disabled {
+    padding: 8px 14px;
+    color: #aaa;
+    font-size: 14px;
 }
