@@ -49,7 +49,6 @@
 
         <hr>
 
-
         <table class="weight-log-table">
             <thead>
                 <tr>
@@ -78,7 +77,6 @@
                 @endforeach
             </tbody>
         </table>
-
 
         <div class="pagination">
             {{ $logs->links() }}

@@ -11,7 +11,7 @@
     <h1 class="form-title">新規会員登録</h1>
     <p class="form-step">STEP1 アカウント情報の登録</p>
 
-    <form action="/register" method="post">
+    <form action="/register" method="post" novalidate>
         @csrf
 
         <div class="form-group">

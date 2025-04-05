@@ -10,7 +10,7 @@
 
     <h1 class="form-title">ログイン</h1>
 
-    <form action="/login" method="post">
+    <form action="/login" method="post" novalidate>
         @csrf
 
         <div class="form-group">
