@@ -4,14 +4,12 @@ body {
     background-color: #f9f9f9;
 }
 
-/* ヘッダー全体 */
 .main-header {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     padding: 12px 0;
 }
 
-/* ヘッダー内の横並びレイアウト */
 .header-inner {
     display: flex;
     justify-content: space-between;
@@ -19,24 +17,20 @@ body {
     padding: 0 24px;
 }
 
-/* ロゴ画像 */
 .header-logo {
     height: 32px;
 }
 
-/* ヘッダー右側（ボタンたち） */
 .header-right {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-/* ボタン用アイコン画像 */
 .header-icon {
     height: 32px;
     cursor: pointer;
 }
-
 
 .management-container {
     display: flex;
@@ -44,14 +38,12 @@ body {
     align-items: center;
 }
 
-/* ログアウトボタンのスタイル（画像のみ） */
 .logout-button {
     background: none;
     border: none;
     padding: 0;
 }
 
-/* ボタン */
 .btn-submit {
     display: block;
     width: 150px;
@@ -65,14 +57,13 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: opacity 0.2s;
-    text-decoration: none; /* リンク用にも */
+    text-decoration: none;
 }
 
 .btn-submit:hover {
     opacity: 0.85;
 }
 
-/* 体重サマリー */
 .summary-wrapper {
     padding: 24px;
     background-color: #fff;
@@ -112,7 +103,6 @@ body {
     color: #333;
 }
 
-/* 検索フォーム */
 .search-add-wrapper {
     display: flex;
     justify-content: space-between;
@@ -176,18 +166,15 @@ body {
     color: #000;
 }
 
-
-
-/* テーブル周り */
 .table-wrapper {
-    padding: 32px; /* 内側の余白を広めに */
-    margin: 48px auto; /* 上下の外側余白も広めに */
+    padding: 32px;
+    margin: 48px auto;
     background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 16px; /* 少し柔らかく丸く */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* 影も少し強めに */
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     width: 100%;
-    max-width: 960px; /* 横幅が画面全体に広がりすぎないように制限 */
+    max-width: 960px;
 }
 
 .weight-log-table {
@@ -213,7 +200,6 @@ body {
     vertical-align: middle;
 }
 
-/* hover効果 */
 .weight-log-item {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -223,7 +209,6 @@ body {
     cursor:pointer;
 }
 
-/* ページネーション */
 .pagination {
     margin-top: 16px;
     text-align: center;
@@ -233,7 +218,6 @@ body {
     display: inline-block;
 }
 
-/* モーダル */
 .modal {
     position: fixed;
     top: 0;
@@ -430,7 +414,6 @@ body {
     color: #333;
 }
 
-/* ページネーション */
 .pagination-wrapper {
     text-align: center;
     margin-top: 24px;

@@ -9,7 +9,12 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function store(RegisterStep1Request $request)
+    public function registerStep1Form()
+    {
+        return view('auth.register-step1');
+    }
+
+    public function registerStep1Store(RegisterStep1Request $request)
     {
         $user = User::create([
             'name' => $request->name,
@@ -20,5 +25,12 @@ class AuthController extends Controller
         Auth::login($user);
 
         return redirect('/register/step2');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        
+        return redirect('/login');
     }
 }

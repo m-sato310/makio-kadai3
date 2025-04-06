@@ -16,17 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/register/step1', function () {
-    return view('auth.register-step1');
-});
-Route::post('/register', [AuthController::class, 'store']);
+Route::get('/register/step1', [AuthController::class, 'registerStep1Form']);
+Route::post('/register/step1', [AuthController::class, 'registerStep1Store']);
 Route::get('/register/step2', [WeightLogController::class, 'registerStep2Form']);
 Route::post('/register/step2', [WeightLogController::class, 'registerStep2Store']);
-
-Route::post('/logout', function () {
-    Auth::logout();
-    return redirect('/login');
-});
 
 
 Route::middleware(['auth'])->group(function () {
@@ -40,4 +33,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/weight_logs/{id}', [WeightLogController::class, 'edit']);
     Route::post('/weight_logs/{id}/update', [WeightLogController::class, 'update']);
     Route::post('/weight_logs/{id}/delete', [WeightLogController::class, 'destroy']);
+
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
