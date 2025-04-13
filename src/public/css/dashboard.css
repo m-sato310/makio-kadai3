@@ -206,7 +206,7 @@ body {
 
 .weight-log-item:hover {
     background-color: skyblue;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .pagination {
@@ -222,27 +222,10 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    visibility: hidden;
     width: 100%;
     height: 100%;
-    opacity: 0;
     z-index: 999;
     transition: opacity 0.3s ease;
-}
-
-.modal:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
 }
 
 .modal__inner {
@@ -252,7 +235,7 @@ body {
     width: 600px;
     max-width: 90%;
     border-radius: 12px;
-    border: 1px solid #8B7969;
+    border: 1px solid #8b7969;
     background-color: #fff;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transform: translate(-50%, -50%);

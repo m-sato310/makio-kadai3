@@ -12,7 +12,7 @@
 
     <form action="/login" method="post" novalidate>
         @csrf
-
+@php dump($errors->all()) @endphp
         <div class="form-group">
             <label for="email">メールアドレス</label>
             <input type="email" name="email" value="{{ old('email') }}" id="email" placeholder="メールアドレスを入力">

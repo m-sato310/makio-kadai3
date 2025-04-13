@@ -7,6 +7,7 @@
     <title>@yield('title', 'Pigly')</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <link rel="stylesheet" href="{{ asset('css/dashboard.css')}}">
+    @livewireStyles
 </head>
 
 <body class="@yield('body_class')">
@@ -37,6 +38,7 @@
         @yield('content')
     </main>
 
+    @livewireScripts
 </body>
 
 </html>

@@ -40,7 +40,7 @@
                 @endif
             </form>
 
-            <a class="btn-submit" href="#weightLogModal">データを追加</a>
+            @livewire('weight-log-modal')
         </div>
 
         @if(isset($searchMessage))
@@ -49,103 +49,7 @@
 
         <hr>
 
-        <table class="weight-log-table">
-            <thead>
-                <tr>
-                    <th>日付</th>
-                    <th>体重</th>
-                    <th>食事摂取カロリー</th>
-                    <th>運動時間</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($logs as $log)
-                <tr class="weight-log-item">
-                    <td>{{ \Carbon\Carbon::parse($log->date)->format('Y/m/d') }}</td>
-                    <td>{{ $log->weight }}kg</td>
-                    <td>{{ $log->calories ?? '-' }}cal</td>
-                    <td>
-                        {{ $log->exercise_time ? \Carbon\Carbon::createFromFormat('H:i:s', $log->exercise_time)->format('H:i') : '-' }}
-                    </td>
-                    <td>
-                        <a href="/weight_logs/{{ $log->id }}">
-                            <img src="{{ asset('images/pencil.png') }}" alt="編集" width="24" height="24">
-                        </a>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-
-        <div class="pagination">
-            {{ $logs->links('vendor.pagination.custom') }}
-        </div>
-    </div>
-
-
-    <div class="modal" id="weightLogModal">
-        <a href="#!" class="modal-overlay"></a>
-        <div class="modal__inner">
-            <div class="modal__content">
-                <h2 class="modal-title">Weight Logを追加</h2>
-                <form action="/weight_logs/create" method="post">
-                    @csrf
-
-                    <div class="modal-form__group">
-                        <label for="" class="modal-form__label">日付 <span class="required">必須</span></label>
-                        <input type="date" name="date" value="{{ old('date', date('Y-m-d')) }}">
-                        @error('date')
-                        <p class="error-message">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="modal-form__group">
-                        <label for="" class="modal-form__label">体重 <span class="required">必須</span></label>
-                        <div class="input-with-unit">
-                            <input type="text" name="weight" value="{{ old('weight') }}">
-                            <span class="unit-label">kg</span>
-                        </div>
-                        @error('weight')
-                        <p class="error-message">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="modal-form__group">
-                        <label class="modal-form__label">摂取カロリー <span class="required">必須</span></label>
-                        <div class="input-with-unit">
-                            <input type="text" name="calories" value="{{ old('calories') }}">
-                            <span class="unit-label">cal</span>
-                        </div>
-                        @error('calories')
-                        <p class="error-message">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="modal-form__group">
-                        <label class="modal-form__label">運動時間 <span class="required">必須</span></label>
-                        <input type="time" name="exercise_time" value="{{ old('exercise_time') }}">
-                        @error('exercise_time')
-                        <p class="error-message">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="modal-form__group">
-                        <label class="modal-form__label">運動内容</label>
-                        <textarea name="exercise_content">{{ old('exercise_content') }}</textarea>
-                        @error('exercise_content')
-                        <p class="error-message">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="modal-form__button-group">
-                        <a href="#" class="modal-btn-cancel">戻る</a>
-                        <input class="modal-form__submit-btn" type="submit" value="登録">
-                    </div>
-                </form>
-            </div>
-
-        </div>
+        @livewire('weight-log-list')
     </div>
 </div>
 @endsection
